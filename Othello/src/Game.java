@@ -44,6 +44,7 @@ public class Game {
                     board.makeMove(autoMove[0], autoMove[1], currentTurn);
                     System.out.println(convertMoveToString(autoMove[0], autoMove[1]));
                 }
+                currentTurn = computer;
             } else {
                 System.out.print("Datorns tur (" + (currentTurn == BLACK ? "Svart" : "Vit") + ") : ");
                 int[] computerMove = board.findBetterMove(currentTurn);
