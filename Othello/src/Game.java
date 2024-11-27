@@ -29,24 +29,24 @@ public class Game {
             }
 
             if (currentTurn == player) {
-                System.out.print("Din tur (" + (currentTurn == BLACK ? "Svart" : "Vit") + ") : ");
-//                String move = s.next().toUpperCase();
-//                int row = Character.getNumericValue(move.charAt(1) - 1);
-//                int column = move.charAt(0) - 65;
-//                if (board.validMove(row, column, currentTurn)) {
-//                    board.makeMove(row, column, currentTurn);
-//                    currentTurn = computer;
-//                } else {
-//                    System.out.println("Ogiltigt drag. Försök igen.");
-//                }
-                int[] autoMove = board.findMove(currentTurn);
-                if (autoMove != null) {
-                    board.makeMove(autoMove[0], autoMove[1], currentTurn);
-                    System.out.println(convertMoveToString(autoMove[0], autoMove[1]));
+                System.out.print("Motståndarens tur (" + (currentTurn == BLACK ? "Svart" : "Vit") + ") : ");
+                String move = s.next().toUpperCase();
+                int row = Character.getNumericValue(move.charAt(1) - 1);
+                int column = move.charAt(0) - 65;
+                if (board.validMove(row, column, currentTurn)) {
+                    board.makeMove(row, column, currentTurn);
+                    currentTurn = computer;
+                } else {
+                    System.out.println("Ogiltigt drag. Försök igen.");
                 }
-                currentTurn = computer;
+//                int[] autoMove = board.findMove(currentTurn);
+//                if (autoMove != null) {
+//                    board.makeMove(autoMove[0], autoMove[1], currentTurn);
+//                    System.out.println(convertMoveToString(autoMove[0], autoMove[1]));
+//                }
+//                currentTurn = computer;
             } else {
-                System.out.print("Datorns tur (" + (currentTurn == BLACK ? "Svart" : "Vit") + ") : ");
+                System.out.print("Jarvis tur (" + (currentTurn == BLACK ? "Svart" : "Vit") + ") : ");
                 int[] computerMove = board.findBetterMove(currentTurn);
                 if (computerMove != null) {
                     board.makeMove(computerMove[0], computerMove[1], currentTurn);

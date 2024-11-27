@@ -8,12 +8,12 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 		
-		System.out.println("Välkommen till Wigello!");
+		System.out.println("Välkommen till Grupp 1's ultimata Wigello algoritm Jarvis!\n(Shout out till Zhifei Zhang och Yuechuan Chen)");
 		char player = ' ';
 		boolean validInput = false;
         
 		while (!validInput) {
-		    System.out.print("Vilken färg vill du spela som?\n[Vit] eller [Svart]: ");
+		    System.out.print("Vilken färg är motståndaren jag ska krossa?\n[Vit] eller [Svart]: ");
 		    String input = s.nextLine().toLowerCase();
 
 		    switch (input) {

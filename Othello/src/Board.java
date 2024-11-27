@@ -133,7 +133,7 @@ public class Board {
 	        	// It needs to be a valid move from the start
 	            if (validMove(i, j, turn)) {
 	                // Test the move and asses the score
-	                int score = testMove(i, j, turn, positionsScores);
+	                int score = positionsScores[i][j];
 	                // Save best score
 	                if (score > bestScore) {
 	                    bestScore = score;
@@ -143,30 +143,6 @@ public class Board {
 	        }
 	    }
 	    return bestMove;
-	}
-
-	// Will test a move to get the positional score
-	private int testMove(int row, int column, char turn, int[][] positionScores) {
-	    char[][] tempBoard = new char[8][8];
-	    for (int i = 0; i < 8; i++) {
-	        System.arraycopy(board[i], 0, tempBoard[i], 0, 8);
-	    }
-	    
-	    // This is not optimal since we are actually making the move on the board instead of a copy board
-	    makeMove(row, column, turn);
-
-	    int score = 0;
-	    for (int i = 0; i < 8; i++) {
-	        for (int j = 0; j < 8; j++) {
-	            if (board[i][j] == turn) {
-	                score += positionScores[i][j];
-	            }
-	        }
-	    }
-	    
-	    // Since we are lazy and made the play on the actual board we need to reset it
-	    board = tempBoard;
-	    return score;
 	}
 	
 	public int countTokens(char turn) {
