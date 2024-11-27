@@ -40,7 +40,8 @@ public class Board {
 		// Get the other color
         char opponentColor = (turn == BLACK) ? WHITE : BLACK;
 
-        // We check one tile in each direction
+        // We check one tile in each direction (9 positions - where we start so 8 in total including diagonally)
+        // If there could be a valid move in this direction we continue checking in that direction
         int[] directions = {-1, 0, 1};
         for (int horizontal : directions) {
             for (int vertical : directions) {
