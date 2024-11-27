@@ -55,7 +55,6 @@ public class Game {
                 currentTurn = player;
             }
         }
-
         s.close();
     }
 

@@ -32,5 +32,4 @@ public class Main {
 		game.play(player);
 		s.close();
 	}
-
 }
